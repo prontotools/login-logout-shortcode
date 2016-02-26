@@ -7,6 +7,10 @@
  */
 
 function login_logout_shortcode() {
+    $html  = '<a href="' . esc_url( wp_logout_url() ) . '">';
+    $html .= 'Logout</a>';
+
+    return $html;
 }
 
 add_shortcode( "login-logout", "login_logout_shortcode" );
