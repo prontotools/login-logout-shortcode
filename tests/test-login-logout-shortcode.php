@@ -7,6 +7,15 @@ class Login_Logout_Shortcode_Test extends WP_UnitTestCase {
         parent::setUp();
     }
 
-    public function testMe() {
+    public function test_login_logout_shortcode_is_registered_to_shortcode_handler() {
+        global $shortcode_tags;
+
+        $this->assertTrue( array_key_exists(
+            "login-logout",
+            $shortcode_tags
+        ) );
+
+        $expected = "login_logout_shortcode";
+        $this->assertEquals( $expected, $shortcode_tags["login-logout"] );
     }
 }
