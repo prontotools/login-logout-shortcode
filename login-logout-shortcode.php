@@ -8,9 +8,15 @@
  * Author URI: http://www.prontotools.io
  */
 
-function login_logout_shortcode() {
+function login_logout_shortcode( $atts ) {
+    $defaults = array(
+        "text_when_logout" => "Login",
+    );
+
+    $atts = shortcode_atts( $defaults, $atts );
+
     $html  = '<a href="' . esc_url( wp_logout_url() ) . '">';
-    $html .= 'Login</a>';
+    $html .= $atts["text_when_logout"] . "</a>";
 
     return $html;
 }

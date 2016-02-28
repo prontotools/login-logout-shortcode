@@ -27,4 +27,13 @@ class Login_Logout_Shortcode_Test extends WP_UnitTestCase {
 
         $this->assertEquals( $expected, $actual );
     }
+
+    public function test_when_not_logged_in_and_text_when_logout_should_show_logout_link_and_text_when_logout() {
+        $expected  = '<a href="' . esc_url( wp_logout_url() ) . '">';
+        $expected .= esc_html( "Please just log me in" ) . '</a>';
+
+        $actual = do_shortcode( '[login-logout text_when_logout="Please just log me in"]' );
+
+        $this->assertEquals( $expected, $actual );
+    }
 }
