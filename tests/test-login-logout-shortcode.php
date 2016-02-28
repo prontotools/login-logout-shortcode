@@ -72,4 +72,22 @@ class Login_Logout_Shortcode_Test extends WP_UnitTestCase {
 
         $this->assertEquals( $expected, $actual );
     }
+
+    public function test_when_login_and_text_when_login_should_show_logout_link_and_text_when_login() {
+        global $current_user;
+
+        $user_id = $this->factory->user->create( array(
+            "user_login"  => "test_author",
+            "description" => "test_author",
+            "role"        => "author",
+        ) );
+        $current_user = $this->factory->user->get_object_by_id( $user_id );
+
+        $expected  = '<a href="' . esc_url( wp_logout_url() ) . '">';
+        $expected .= esc_html( "Get me out of here" ) . '</a>';
+
+        $actual = do_shortcode( '[login-logout text_when_login="Get me out of here"]' );
+
+        $this->assertEquals( $expected, $actual );
+    }
 }

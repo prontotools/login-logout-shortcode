@@ -11,6 +11,7 @@
 function login_logout_shortcode( $atts ) {
     $defaults = array(
         "text_when_logout" => "Login",
+        "text_when_login"  => "Logout",
         "redirect"         => get_the_permalink(),
         "class"            => "",
     );
@@ -19,7 +20,7 @@ function login_logout_shortcode( $atts ) {
 
     if ( true == is_user_logged_in() ) {
         $html = '<a href="' . esc_url( wp_logout_url( $atts["redirect"] ) ) . '"';
-        $text = "Logout";
+        $text = $atts["text_when_login"];
     } else {
         $html = '<a href="' . esc_url( wp_login_url( $atts["redirect"] ) ) . '"';
         $text = $atts["text_when_logout"];
