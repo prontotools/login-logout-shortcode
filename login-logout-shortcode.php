@@ -17,7 +17,13 @@ function login_logout_shortcode( $atts ) {
 
     $atts = shortcode_atts( $defaults, $atts );
 
-    $html  = '<a href="' . esc_url( wp_login_url( $atts["redirect"] ) ) . '"';
+    if ( true == is_user_logged_in() ) {
+        $html = '<a href="' . esc_url( wp_logout_url( $atts["redirect"] ) ) . '"';
+        $text = "Logout";
+    } else {
+        $html = '<a href="' . esc_url( wp_login_url( $atts["redirect"] ) ) . '"';
+        $text = $atts["text_when_logout"];
+    }
 
     if ( "" != $atts["class"] ) {
         $html .= ' class="' . $atts["class"] . '">';
@@ -25,7 +31,7 @@ function login_logout_shortcode( $atts ) {
         $html .= '>';
     }
 
-    $html .= $atts["text_when_logout"] . "</a>";
+    $html .= $text . "</a>";
 
     return $html;
 }
