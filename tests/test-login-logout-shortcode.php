@@ -21,7 +21,7 @@ class Login_Logout_Shortcode_Test extends WP_UnitTestCase {
 
     public function test_when_not_logged_in_and_no_params_should_show_logout_link_redirecting_to_login_page_by_default() {
         $expected  = '<a href="' . esc_url( wp_logout_url() ) . '">';
-        $expected .= esc_html( "Logout" ) . '</a>';
+        $expected .= esc_html( "Login" ) . '</a>';
 
         $actual = do_shortcode( "[login-logout]" );
 
