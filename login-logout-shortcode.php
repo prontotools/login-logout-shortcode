@@ -11,7 +11,7 @@
 function login_logout_shortcode( $atts ) {
     $defaults = array(
         "text_when_logout" => "Login",
-        "redirect"         => "",
+        "redirect"         => get_the_permalink(),
         "class"            => "",
     );
 
