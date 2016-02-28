@@ -1,9 +1,11 @@
 <?php
-
 /*
- * Plugin Name: Login-Logout Shortcode
- * Plugin URI: http://www.prontotools.io/
+ * Plugin Name: Simple Login-Logout Shortcode
+ * Plugin URI: https://github.com/prontotools/login-logout-shortcode
+ * Description: A single shortcode you can place anywhere to allow visitors to login/logout.
  * Version: 1.0.0
+ * Author: Pronto Tools
+ * Author URI: http://www.prontotools.io
  */
 
 function login_logout_shortcode() {
