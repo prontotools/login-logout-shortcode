@@ -36,4 +36,14 @@ class Login_Logout_Shortcode_Test extends WP_UnitTestCase {
 
         $this->assertEquals( $expected, $actual );
     }
+
+    public function test_put_class_param_should_have_class_on_login_logout_link() {
+        $expected  = '<a href="' . esc_url( wp_logout_url() ) . '" ';
+        $expected .= 'class="btn btn-primary">';
+        $expected .= esc_html( "Login" ) . '</a>';
+
+        $actual = do_shortcode( '[login-logout class="btn btn-primary"]' );
+
+        $this->assertEquals( $expected, $actual );
+    }
 }

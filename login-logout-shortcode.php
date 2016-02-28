@@ -11,11 +11,19 @@
 function login_logout_shortcode( $atts ) {
     $defaults = array(
         "text_when_logout" => "Login",
+        "class"            => "",
     );
 
     $atts = shortcode_atts( $defaults, $atts );
 
-    $html  = '<a href="' . esc_url( wp_logout_url() ) . '">';
+    $html  = '<a href="' . esc_url( wp_logout_url() ) . '"';
+
+    if ( "" != $atts["class"] ) {
+        $html .= ' class="' . $atts["class"] . '">';
+    } else {
+        $html .= '>';
+    }
+
     $html .= $atts["text_when_logout"] . "</a>";
 
     return $html;
