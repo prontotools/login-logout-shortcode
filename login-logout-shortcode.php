@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Plugin Name: Simple Login-Logout Shortcode
  * Plugin URI: https://github.com/prontotools/login-logout-shortcode
