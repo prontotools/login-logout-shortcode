@@ -13,7 +13,7 @@ function login_logout_shortcode( $atts ) {
     $defaults = array(
         "text_to_login"  => "Login",
         "text_to_logout" => "Logout",
-        "redirect"       => get_the_permalink(),
+        "redirect"       => $_SERVER["REQUEST_URI"],
         "class"          => "",
     );
 
