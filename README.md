@@ -17,3 +17,9 @@ To run, test, and develop the Simple Login-Logout Shortcode plugin with Docker c
 2. Test running the PHPUnit on this plugin:
 
   `$ docker run -it -v $(pwd):/app wptest /bin/bash -c "service mysql start && phpunit"`
+
+Changelog
+----------
+
+= 1.0.0 =
+- First release!
