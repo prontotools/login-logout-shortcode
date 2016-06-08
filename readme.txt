@@ -1,5 +1,5 @@
 === Login Logout Shortcode ===
-Contributors: prontotools
+Contributors: prontotools, zkancs
 Tags: login, logout, shortcode
 Requires at least: 4.0
 Tested up to: 4.4.2
