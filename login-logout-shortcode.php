@@ -7,6 +7,8 @@
  * Version: 1.0.0
  * Author: Pronto Tools
  * Author URI: http://www.prontotools.io
+ * License: GNU General Public License v3.0
+ * License URI: http://www.gnu.org/licenses/gpl-3.0.html
  */
 
 function login_logout_shortcode( $atts ) {
