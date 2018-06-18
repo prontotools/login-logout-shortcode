@@ -11,39 +11,38 @@
  */
 
 function login_logout_shortcode( $atts ) {
-    $defaults = array(
-        "text_to_login"  => "Login",
-        "text_to_logout" => "Logout",
-        "redirect"       => $_SERVER["REQUEST_URI"],
-        "class"          => "",
-        "login_url"      => "",
-    );
+	$defaults = array(
+		"text_to_login"  => "Login",
+		"text_to_logout" => "Logout",
+		"redirect"	   => $_SERVER["REQUEST_URI"],
+		"class"		  => "",
+		"login_url"	  => "",
+	);
 
-    $atts = shortcode_atts( $defaults, $atts );
+	$atts = shortcode_atts( $defaults, $atts );
 
-    if ( true == is_user_logged_in() ) {
-        $html = '<a href="' . esc_url( wp_logout_url( $atts["redirect"] ) ) . '"';
-        $text = $atts["text_to_logout"];
-    } else {
-        if ( "" != $atts["login_url"] ) {
-            $html = '<a href="' . esc_url( $atts["login_url"] ) . '"';
-        } else {
-            $html = '<a href="' . esc_url( wp_login_url( $atts["redirect"] ) ) . '"';
-        }
-        $text = $atts["text_to_login"];
+	if ( true == is_user_logged_in() ) {
+		$html = '<a href="' . esc_url( wp_logout_url( $atts["redirect"] ) ) . '"';
+		$text = $atts["text_to_logout"];
+	} else {
+		if ( "" != $atts["login_url"] ) {
+			$html = '<a href="' . esc_url( $atts["login_url"] ) . '"';
+		} else {
+			$html = '<a href="' . esc_url( wp_login_url( $atts["redirect"] ) ) . '"';
+		}
+		$text = $atts["text_to_login"];
 
-        
-    }
 
-    if ( "" != $atts["class"] ) {
-        $html .= ' class="' . $atts["class"] . '">';
-    } else {
-        $html .= '>';
-    }
+	}
 
-    $html .= $text . "</a>";
+	if ( "" != $atts["class"] ) {
+		$html .= ' class="' . $atts["class"] . '">';
+	} else {
+		$html .= '>';
+	}
 
-    return $html;
+	$html .= $text . "</a>";
+
+	return $html;
 }
-
 add_shortcode( "login-logout", "login_logout_shortcode" );
