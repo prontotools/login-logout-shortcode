@@ -3,7 +3,7 @@ Contributors: prontotools, zkancs
 Tags: login, logout, shortcode
 Requires at least: 4.0
 Tested up to: 4.4.2
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -34,6 +34,9 @@ The shortcode outputs an a href link for you to add in the header, footer or any
 4. Enjoy!
 
 == Changelog ==
+
+= 1.1.0 =
+* Add login URL parameter so that user can change the URL login page instead of login on WP admin page 
 
 = 1.0.0 =
 * First release!
