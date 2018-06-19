@@ -2,7 +2,7 @@
 Contributors: prontotools, zkancs
 Tags: login, logout, shortcode
 Requires at least: 4.0
-Tested up to: 4.4.2
+Tested up to: 4.9.6
 Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -25,6 +25,7 @@ The shortcode outputs an a href link for you to add in the header, footer or any
 - **text_to_logout** - The text to prompt logged-in users to log out.
 - **class** - Any optional custom classes to be added to the link.
 - **redirect** - An optional page to redirect to after logging in/out. If not included, users will redirect to whatever page they’re on when they click the link.
+- **login_url** - An optional parameter that user can change the URL login page
 
 == Installation ==
 
