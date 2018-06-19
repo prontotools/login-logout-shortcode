@@ -21,5 +21,8 @@ To run, test, and develop the Simple Login-Logout Shortcode plugin with Docker c
 Changelog
 ----------
 
+= 1.1.0 =
+- Add login URL parameter so that user can change the URL login page instead of login on WP admin page 
+ 
 = 1.0.0 =
 - First release!
